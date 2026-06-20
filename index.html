@@ -350,7 +350,7 @@ hr{border:0;border-top:2px ridge #9aa;height:0;margin:14px 0}
     </div>
     <div class="webmaster">&#9993; webmaster@jaxxslade.com &nbsp;|&nbsp; Last updated: 06/17/2026</div>
     <p class="small">Best viewed in Netscape Navigator 4.0 at 800&times;600 with sound ON &#128266;<br>
-      &copy; 2026 Jaxx Slade Pictures. All rights reserved. &nbsp; <a href="https://jaxxslade.sourceaudio.com" target="_blank" rel="noopener">jaxxslade.sourceaudio.com</a><br>
+      &copy; 2026 Jaxx Slade Pictures. All rights reserved. &nbsp; <a href="https://catalog.jaxxslade.com" target="_blank" rel="noopener">catalog.jaxxslade.com</a><br>
       <span class="blink" style="color:#ff0000">Sign my guestbook!</span>
     </p>
   </div>
@@ -461,7 +461,7 @@ function applyFilter(k,label){
     el.style.display = ok ? '' : 'none';
     if(ok && el.classList.contains('cell')) shown++;
   });
-  if(k==='all'){catnote.innerHTML='showing all 24 features (newest first) &mdash; <a href="https://jaxxslade.sourceaudio.com" target="_blank" rel="noopener">open the whole catalogue on SourceAudio &raquo;</a>';}
+  if(k==='all'){catnote.innerHTML='showing all 24 features (newest first) &mdash; <a href="https://catalog.jaxxslade.com" target="_blank" rel="noopener">open the whole catalogue &raquo;</a>';}
   else{catnote.innerHTML=`showing ${shown} ${esc(label.toLowerCase())} feature${shown===1?'':'s'} &mdash; <a href="${SEARCH+encodeURIComponent(label)}" target="_blank" rel="noopener">hear ALL ${esc(label.toLowerCase())} cues on SourceAudio &raquo;</a>`;}
 }
 chips.addEventListener('click',e=>{
