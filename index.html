@@ -119,6 +119,9 @@ hr{border:0;border-top:2px ridge #9aa;height:0;margin:14px 0}
 .win.max{position:fixed;inset:8px;max-width:none;width:auto;margin:0;display:flex;flex-direction:column}
 .win.max .wbody{flex:1 1 auto;overflow:auto}
 #player{height:112px;border:0;display:block;background:#f6f6f6}
+/* persistent player: docks as a floating bar while a feature pop-up is open, so audio keeps playing as you browse */
+.jukeframe.dock{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;width:600px;max-width:calc(100vw - 18px);z-index:300;margin:0;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.5)}
+.walbnote{font:12px "Courier New",monospace;color:#555;margin:0 0 8px}
 .jukehint{font-family:"Courier New",monospace;font-size:12px;color:#cc0066;text-align:center;margin:6px 0 10px}
 .jbl{margin:0;padding:0;list-style:none;columns:2;column-gap:26px}
 @media(max-width:640px){.jbl{columns:1}}
@@ -195,6 +198,7 @@ hr{border:0;border-top:2px ridge #9aa;height:0;margin:14px 0}
 /* -------- album feature popup -------- */
 .modal{position:fixed;inset:0;background:rgba(0,0,40,.55);z-index:100;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:22px 10px}
 .modal[hidden]{display:none}
+body.playerdocked .modal{padding-bottom:165px}
 .win{background:#c0c0c0;border:3px outset #fff;max-width:680px;width:100%;margin:auto;box-shadow:5px 5px 0 rgba(0,0,0,.45)}
 .wtbar{background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-family:"Arial",sans-serif;font-weight:bold;font-size:13px;padding:4px 8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
 .wtbar #wtitle{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -448,7 +452,10 @@ const embedURL=(c,w)=>"https://jaxxslade.sourceaudio.com/embed.php?code="+c+"&ar
 function setPlayer(f,c){const p=f.parentElement;const w=Math.max(538,Math.round(((p&&p.clientWidth)||648)-8));f.style.width=w+'px';f.src=embedURL(c,w);}
 const player=document.getElementById('player'), npname=document.getElementById('npname'), jbl=document.getElementById('jukelist');
 jbl.innerHTML=JUKE.map((j,i)=>`<li data-i="${i}"><span class="num">${String(i+1).padStart(2,'0')}.</span><span class="nm" onclick="jukePlay(${i})">${esc(j.t)}</span></li>`).join('');
-function jukePlay(i){const j=JUKE[i]; if(!j)return; player.parentElement.classList.remove('min','closed'); setPlayer(player,j.c); npname.textContent=j.t; jbl.querySelectorAll('li').forEach(li=>li.classList.toggle('playing',+li.dataset.i===i));}
+let curCue=null;
+function playCue(code,title){curCue=code; player.parentElement.classList.remove('min','closed'); setPlayer(player,code); npname.textContent=title||'…';}
+function dockPlayer(on){player.parentElement.classList.toggle('dock',on); document.body.classList.toggle('playerdocked',on);}
+function jukePlay(i){const j=JUKE[i]; if(!j)return; playCue(j.c,j.t); jbl.querySelectorAll('li').forEach(li=>li.classList.toggle('playing',+li.dataset.i===i));}
 document.querySelectorAll('.ptbar .pwin').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();const fr=player.parentElement,a=b.dataset.act;if(a==='min')fr.classList.add('min');else if(a==='max')fr.classList.remove('min','closed');else fr.classList.add('closed');}));
 document.querySelector('.ptbar').addEventListener('click',e=>{const fr=player.parentElement;if(fr.classList.contains('min')&&!e.target.closest('.pwin'))fr.classList.remove('min');});
 jukePlay(0);
@@ -498,12 +505,10 @@ function renderAlbum(){
   acount.textContent='Feature '+(curAlb+1)+' / '+SLATE.length;
   let playerHTML;
   if(tracks){
-    playerHTML = `<div class="wplayer"><iframe id="walbplayer" title="player" scrolling="no" frameborder="0" src="${embedURL(tracks[0].c)}"></iframe></div>
-      <ol class="walbtracks">${tracks.map((tr,k)=>`<li class="${k===0?'playing':''}"><span class="nm" onclick="albPlay(${k})">${esc(tr.t)}</span></li>`).join('')}</ol>`;
-  } else if(cue){
-    playerHTML = `<div class="wplayer"><iframe title="player" scrolling="no" frameborder="0" src="${embedURL(cue)}"></iframe></div>`;
+    playerHTML = `<div class="walbnote">&#9658; click a cue &mdash; it plays in the floating player &amp; keeps going as you browse</div>
+      <ol class="walbtracks">${tracks.map((tr,k)=>`<li class="${tr.c===curCue?'playing':''}"><span class="nm" onclick="albPlay(${k})">${esc(tr.t)}</span></li>`).join('')}</ol>`;
   } else {
-    playerHTML = `<div class="wnone">&#9658; press play on the album page &mdash; all ${a.n} cues stream on SourceAudio</div>`;
+    playerHTML = `<div class="wnone">&#9658; all ${a.n} cues stream on SourceAudio &mdash; hit the button below</div>`;
   }
   wbody.innerHTML=`<div class="wcols">
     <div class="wposter"><img src="${a.img}" alt="${esc(a.t)} poster"></div>
@@ -517,11 +522,11 @@ function renderAlbum(){
 }
 function albPlay(k){
   const a=SLATE[curAlb], tracks=ALBUM_TRACKS[a.c]; if(!tracks||!tracks[k])return;
-  const f=document.getElementById('walbplayer'); if(f)f.src=embedURL(tracks[k].c);
+  playCue(tracks[k].c, a.t+' — '+tracks[k].t);
   document.querySelectorAll('.walbtracks li').forEach((li,idx)=>li.classList.toggle('playing',idx===k));
 }
-function openAlbum(i){curAlb=(i+SLATE.length)%SLATE.length; renderAlbum(); modal.hidden=false; document.body.style.overflow='hidden';}
-function closeAlbum(){const f=wbody.querySelector('iframe'); if(f)f.src='about:blank'; modal.hidden=true; document.body.style.overflow=''; const w=document.querySelector('.win'); if(w)w.classList.remove('min','max');}
+function openAlbum(i){curAlb=(i+SLATE.length)%SLATE.length; renderAlbum(); modal.hidden=false; document.body.style.overflow='hidden'; dockPlayer(true);}
+function closeAlbum(){modal.hidden=true; document.body.style.overflow=''; dockPlayer(false); const w=document.querySelector('.win'); if(w)w.classList.remove('min','max');}
 function albStep(d){openAlbum(curAlb+d);}
 document.getElementById('wclose').onclick=e=>{e.preventDefault();closeAlbum();};
 const winEl=document.querySelector('.win');
