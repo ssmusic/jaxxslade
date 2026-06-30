@@ -160,8 +160,6 @@ hr{border:0;border-top:2px ridge #9aa;height:0;margin:14px 0}
 .cell h4 a{color:#0000ee;text-decoration:underline}
 .cell .log{font-style:italic;font-size:12.5px;color:#333;margin:4px 2px 7px;line-height:1.3}
 .cell .tags{font-family:"Courier New",monospace;font-size:10px;color:#888;margin-bottom:6px}
-.cell .listen{font-family:"Courier New",monospace;font-size:11px;background:#c0c0c0;color:#000;border:2px outset #fff;padding:2px 8px;text-decoration:none;display:inline-block}
-.cell .listen:hover{background:#9f9;color:#000}
 
 .textcat{display:none}
 .textcat.on{display:block}
@@ -337,7 +335,6 @@ body.playerdocked .modal{padding-bottom:165px}
   </div>
 
   <!-- ===== BOTTOM ALBUM CRAWL ===== -->
-  <div class="crawlhead">&#9733;&#9733;&#9733; THE COMPLETE SLATE &mdash; 2022 &rarr; 2026 &#9733;&#9733;&#9733;</div>
   <div class="crawl">
     <marquee scrollamount="4" behavior="scroll" direction="left" id="crawl"></marquee>
   </div>
@@ -432,7 +429,6 @@ document.getElementById('grid').innerHTML = SLATE.map((a,i)=>`
     <h4><a href="#" onclick="openAlbum(${i});return false;">${esc(a.t)}</a></h4>
     <div class="log">${esc(a.log)}</div>
     <div class="tags">${esc(a.tag)}</div>
-    <a class="listen" href="#" onclick="openAlbum(${i});return false;">&#9658; OPEN FEATURE</a>
   </div>`).join('');
 
 /* text-only catalog */
