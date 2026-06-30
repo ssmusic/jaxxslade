@@ -236,6 +236,41 @@ body.playerdocked .modal{padding-bottom:165px}
 .wnav button:active{border-style:inset}
 .acount{font-family:"Courier New",monospace;font-size:12px;color:#333}
 
+/* -------- SCREENING ROOM teaser (home view entry banner) -------- */
+.srteaser{display:block;margin:14px 0 4px;background:#000;text-align:center;text-decoration:none;color:#fff;border:3px outset #777;cursor:pointer;overflow:hidden}
+.srteaser:hover{border-color:#bbb;color:#fff}
+.srteaser .filmedge{display:block;height:16px;background-color:#000;background-image:repeating-linear-gradient(90deg,#fff 0 14px,#000 14px 34px)}
+.srteaser .srtcore{padding:14px 12px 12px;background:radial-gradient(ellipse at center,#1a0a4a 0%,#000028 70%,#000 100%);position:relative}
+.srteaser .srtitle{font-family:"Impact","Arial Black",sans-serif;font-size:34px;color:#ff66cc;letter-spacing:.12em;line-height:1;margin:0;text-shadow:2px 2px 0 #aa0066, -1px -1px 0 #66e6ff, 0 0 14px rgba(255,102,204,.45)}
+.srteaser .srsub{font-family:"Courier New",monospace;font-size:13px;color:#ffe14d;margin:7px 0 0;letter-spacing:.1em;text-transform:uppercase}
+.srteaser .srlist{font-family:"Arial Black",sans-serif;font-size:12.5px;color:#fff;margin-top:5px;letter-spacing:.04em}
+.srteaser .srlist b{color:#ffe14d}
+.srteaser .srlist .hot{color:#ff5a5a}
+@media(max-width:520px){.srteaser .srtitle{font-size:26px}.srteaser .srlist{font-size:11.5px}}
+
+/* -------- SCREENING ROOM modal -------- */
+#srmodal .srhead{text-align:center;margin:0 0 12px;padding:8px;background:#000;border:3px outset #777}
+#srmodal .srhead .srbanner{display:block;margin:0 auto;max-width:100%}
+#srmodal .srhead .srh1{font-family:"Impact","Arial Black",sans-serif;font-size:30px;color:#ff66cc;letter-spacing:.08em;line-height:1;margin:6px 0 0;text-shadow:2px 2px 0 #aa0066,0 0 12px rgba(255,102,204,.4)}
+#srmodal .srhead .srh2{font-family:"Courier New",monospace;font-size:12px;color:#ffe14d;letter-spacing:.18em;margin:5px 0 0}
+.srintro{font-family:"Courier New",monospace;font-size:12px;color:#555;text-align:center;margin:0 0 14px;padding:7px 9px;border:2px ridge #d2691e;background:#fff8e6}
+.srcard{border:3px ridge #9a9ad6;background:#fff;margin:0 0 18px;position:relative}
+.srcard .srbar{background:linear-gradient(#2a2a99,#101046);color:#ffe14d;font-family:"Arial Black",sans-serif;font-size:13px;letter-spacing:.05em;padding:6px 10px;display:flex;justify-content:space-between;align-items:center;gap:8px;text-shadow:1px 1px 0 #000}
+.srcard .srbar .srbar-r{font-family:"Courier New",monospace;font-size:11px;color:#bcd0ff;letter-spacing:.04em;text-transform:none;text-shadow:none;white-space:nowrap}
+.srcard .srbody{padding:11px 13px 13px}
+.srcard h4{font-family:"Impact","Arial Black",sans-serif;font-size:30px;color:#000;letter-spacing:.04em;margin:0 0 3px;line-height:1}
+.srcard h4 .yr{font-family:"Times New Roman",serif;font-style:italic;font-size:15px;color:#666;font-weight:normal;letter-spacing:0;margin-left:6px}
+.srcard .srfeat{font-family:"Courier New",monospace;font-size:13px;color:#060;margin:0 0 10px;line-height:1.4}
+.srcard .srfeat b{color:#cc0066;text-transform:uppercase;letter-spacing:.04em}
+.srcard .srvid{position:relative;background:#000;border:3px outset #777;padding:5px;margin:0 0 10px}
+.srcard .srvid iframe{width:100%;aspect-ratio:16/9;border:0;display:block;background:#000}
+.srcard .srrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.srcard .srplay{font-family:"Arial Black",sans-serif;font-size:12px;background:#001b6b;color:#fff;border:3px outset #5a78ff;padding:5px 11px;text-decoration:none;cursor:pointer;display:inline-block}
+.srcard .srplay:hover{background:#0030c0;color:#fff}
+.srcard .srextra{flex:1;font-family:"Courier New",monospace;font-size:11px;color:#888;text-align:right;min-width:120px}
+.srbadge-new{position:absolute;top:-9px;right:-9px;background:#ff0033;color:#fff;font-family:"Arial Black",sans-serif;font-size:11px;padding:3px 7px;border:2px outset #ff9aab;transform:rotate(8deg);z-index:2}
+.srdisclaimer{text-align:center;font-family:"Courier New",monospace;font-size:11px;color:#666;margin-top:14px;padding-top:10px;border-top:1px dashed #999;line-height:1.5}
+
 /* -------- footer cruft -------- */
 .foot{text-align:center;margin-top:22px;font-size:13px;color:#333}
 .counter{display:inline-block;background:#000;border:2px inset #888;padding:3px 5px;margin:6px 0}
@@ -268,6 +303,7 @@ body.playerdocked .modal{padding-bottom:165px}
   <!-- ===== NEWS TICKER ===== -->
   <div class="ticker">
     <marquee scrollamount="6" behavior="scroll" direction="left">
+      <span class="hot">&#9733; NEW &#9733;</span> JAXX SLADE music HEARD IN <b>WOLFMAN</b> &middot; <b>FANTASTIC FOUR</b> &middot; <b>SMILE 2</b> &mdash; <a href="#" onclick="openSR();return false;" style="color:#ffe14d">visit the SCREENING ROOM &raquo;</a> &nbsp;&bull;&nbsp;
       <b>&#9733; NOW SHOWING &#9733;</b> &nbsp; 24 FEATURES in 4 years &nbsp;&bull;&nbsp; a NEW album every 60 days &nbsp;&bull;&nbsp; 199 primary cues &nbsp;&bull;&nbsp; 2,643 deliverables &nbsp;&bull;&nbsp; <span class="hot">HOT!</span> The Thirteenth Reckoning &mdash; OUT NOW &nbsp;&bull;&nbsp; dark / heroic / hybrid &nbsp;&bull;&nbsp; <b>SOUND ON!!</b> &nbsp;&bull;&nbsp; sign the guestbook &nbsp;&bull;&nbsp; best viewed in Netscape Navigator 4.0 &nbsp;&bull;&nbsp;
     </marquee>
   </div>
@@ -280,6 +316,17 @@ body.playerdocked .modal{padding-bottom:165px}
     <div class="welcome">~*~ Welcome to the OFFICIAL home of Jaxx Slade &mdash; trailer music that moves pictures ~*~</div>
     <div class="construction">&#128679; UNDER CONSTRUCTION &#128679; &nbsp; established 2022 &nbsp; &#128679;</div>
   </div>
+
+  <!-- ===== SCREENING ROOM TEASER ===== -->
+  <a href="#" class="srteaser" onclick="openSR();return false;" title="See where Jaxx Slade music has been heard">
+    <span class="filmedge"></span>
+    <div class="srtcore">
+      <div class="srtitle">&#9733; SCREENING ROOM &#9733;</div>
+      <div class="srsub">&#127916; Now showing in a theatre near you &#127916;</div>
+      <div class="srlist"><b>WOLFMAN</b> &middot; <b>FANTASTIC FOUR</b> &middot; <b>SMILE 2</b> &mdash; <span class="hot blink">CLICK HERE!</span></div>
+    </div>
+    <span class="filmedge"></span>
+  </a>
 
   <!-- ===== SEARCH ===== -->
   <div class="box search" id="findcue">
@@ -373,6 +420,14 @@ body.playerdocked .modal{padding-bottom:165px}
       <span class="acount" id="acount"></span>
       <button id="anext" type="button">NEXT &#9658;</button>
     </div>
+  </div>
+</div>
+
+<!-- ===== SCREENING ROOM POPUP ===== -->
+<div id="srmodal" class="modal" hidden>
+  <div class="win" role="dialog" aria-modal="true" aria-label="Screening Room">
+    <div class="wtbar"><span id="srtitle">JAXX SLADE PICTURES &mdash; SCREENING ROOM</span><span class="wbtns"><a href="#" id="srmin" title="minimize">_</a><a href="#" id="srmax" title="maximize">&#9633;</a><a href="#" id="srclose" title="close">&#10005;</a></span></div>
+    <div class="wbody" id="srbody"></div>
   </div>
 </div>
 
@@ -526,7 +581,7 @@ function albPlay(k){
   document.querySelectorAll('.walbtracks li').forEach((li,idx)=>li.classList.toggle('playing',idx===k));
 }
 function openAlbum(i){curAlb=(i+SLATE.length)%SLATE.length; renderAlbum(); modal.hidden=false; document.body.style.overflow='hidden'; dockPlayer(true);}
-function closeAlbum(){modal.hidden=true; document.body.style.overflow=''; dockPlayer(false); const w=document.querySelector('.win'); if(w)w.classList.remove('min','max');}
+function closeAlbum(){modal.hidden=true; const sr=document.getElementById('srmodal'); if(!sr||sr.hidden){document.body.style.overflow=''; dockPlayer(false);} const w=document.querySelector('#albmodal .win'); if(w)w.classList.remove('min','max');}
 function albStep(d){openAlbum(curAlb+d);}
 document.getElementById('wclose').onclick=e=>{e.preventDefault();closeAlbum();};
 const winEl=document.querySelector('.win');
@@ -537,6 +592,54 @@ document.getElementById('aprev').onclick=()=>albStep(-1);
 document.getElementById('anext').onclick=()=>albStep(1);
 modal.addEventListener('click',e=>{if(e.target===modal)closeAlbum();});
 document.addEventListener('keydown',e=>{if(modal.hidden)return; if(e.key==='Escape')closeAlbum(); else if(e.key==='ArrowLeft')albStep(-1); else if(e.key==='ArrowRight')albStep(1);});
+
+/* ---- SCREENING ROOM (placements) ---- */
+const PLACEMENTS=[
+  {film:"WOLFMAN",         studio:"Universal / Blumhouse",  year:2025, track:"Blind Torture Kill",   cue:"154871dcbaf7c403bec5719c3122ad44516559", yt:"ylmBfXufuO0", note:"Official trailer"},
+  {film:"FANTASTIC FOUR",  studio:"Marvel Studios",         year:2025, track:"When Stars Vanish",    cue:"1548749ce58b4c2f4666429d60abee3b71edcf", yt:"wxpr2nR8cXc", note:"Official trailer"},
+  {film:"SMILE 2",         studio:"Paramount Pictures",     year:2024, track:"Fear Of Going Insane", cue:"154870b5f27f3cf1809e377a7c7d6ecf26f3c2", yt:"bgaAJe34DI4", note:"Official clip — also promoted by M.I.A."},
+];
+const srmodal=document.getElementById('srmodal'), srbody=document.getElementById('srbody');
+const srwin=srmodal.querySelector('.win'), srwtbar=srmodal.querySelector('.wtbar');
+function renderSR(){
+  srbody.innerHTML = `
+    <div class="srhead">
+      <div class="srh1">&#9733; NOW SHOWING &#9733;</div>
+      <div class="srh2">J&nbsp;A&nbsp;X&nbsp;X &middot; S&nbsp;L&nbsp;A&nbsp;D&nbsp;E &middot; P&nbsp;L&nbsp;A&nbsp;C&nbsp;E&nbsp;M&nbsp;E&nbsp;N&nbsp;T&nbsp;S</div>
+    </div>
+    <div class="srintro">&#127916; Music from JAXX SLADE PICTURES has been heard in the following theatrical features. Click &#9658; PLAY THE CUE to hear the actual track in our floating jukebox player while you watch.</div>
+    ${PLACEMENTS.map((p,i)=>`
+      <div class="srcard">
+        ${p.year>=2025?'<span class="srbadge-new blink">NEW!</span>':''}
+        <div class="srbar"><span>FEATURE #${String(i+1).padStart(2,'0')} &mdash; ${esc(p.film)}</span><span class="srbar-r">${esc(p.studio)} &middot; ${p.year}</span></div>
+        <div class="srbody">
+          <h4>${esc(p.film)} <span class="yr">(${p.year})</span></h4>
+          <div class="srfeat"><b>Featuring:</b> &ldquo;${esc(p.track)}&rdquo; &mdash; by JAXX SLADE</div>
+          <div class="srvid"><iframe src="https://www.youtube-nocookie.com/embed/${p.yt}?rel=0&modestbranding=1" title="${esc(p.film)} — trailer" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin" loading="lazy"></iframe></div>
+          <div class="srrow">
+            <a class="srplay" href="#" onclick="playCue('${p.cue}','${esc(p.film)} — ${esc(p.track)}');return false;">&#9658; PLAY THE CUE</a>
+            <span class="srextra">&#9758; ${esc(p.note)}</span>
+          </div>
+        </div>
+      </div>
+    `).join('')}
+    <div class="srdisclaimer">Trailers &copy; respective studios &mdash; embedded from YouTube. No infringement intended.<br>
+      All featured cues licensed via SourceAudio &mdash; <a href="https://catalog.jaxxslade.com" target="_blank" rel="noopener">catalog.jaxxslade.com</a>.</div>`;
+}
+function openSR(){renderSR(); srmodal.hidden=false; document.body.style.overflow='hidden'; dockPlayer(true); srwin.classList.remove('min','max');}
+function closeSR(){
+  srmodal.hidden=true;
+  /* stop any embedded trailer that was still playing */
+  srbody.querySelectorAll('iframe').forEach(f=>{const s=f.src;f.src='about:blank';setTimeout(()=>{f.src=s;},0);});
+  if(modal.hidden){document.body.style.overflow=''; dockPlayer(false);}
+  srwin.classList.remove('min','max');
+}
+document.getElementById('srclose').onclick=e=>{e.preventDefault();closeSR();};
+document.getElementById('srmin').onclick=e=>{e.preventDefault();srwin.classList.remove('max');srwin.classList.toggle('min');};
+document.getElementById('srmax').onclick=e=>{e.preventDefault();srwin.classList.remove('min');srwin.classList.toggle('max');};
+srwtbar.addEventListener('click',e=>{if(srwin.classList.contains('min')&&!e.target.closest('.wbtns'))srwin.classList.remove('min');});
+srmodal.addEventListener('click',e=>{if(e.target===srmodal)closeSR();});
+document.addEventListener('keydown',e=>{if(srmodal.hidden)return; if(e.key==='Escape')closeSR();});
 </script>
 </body>
 </html>
