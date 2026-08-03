@@ -3,269 +3,172 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>:::: JAXX SLADE PiCTURES :::: Official Home Page ::::</title>
-<meta name="description" content="The OFFICIAL home page of JAXX SLADE — trailer music studio. 24 features. Sound ON!! Best viewed in Netscape Navigator." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23fff'/%3E%3Ctext x='32' y='49' font-family='Impact,sans-serif' font-size='46' fill='%23ee0000' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E" />
+<title>Jaxx Slade Pictures — Boutique Trailer Music</title>
+<meta name="description" content="Jaxx Slade Pictures is a boutique trailer-music catalogue: 24 features and more than 2,600 cinematic cues available to hear and license." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23e8e5da'/%3E%3Ctext x='32' y='48' font-family='Georgia,serif' font-size='46' fill='%23272825' text-anchor='middle'%3EJ%3C/text%3E%3C/svg%3E" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://jaxxslade.com/" />
 <meta property="og:site_name" content="Jaxx Slade Pictures" />
-<meta property="og:title" content="JAXX SLADE PICTURES — Official Home Page" />
-<meta property="og:description" content="24 features. Trailer music that moves pictures. Sound ON!!" />
+<meta property="og:title" content="Jaxx Slade Pictures — Boutique Trailer Music" />
+<meta property="og:description" content="24 features. More than 2,600 cinematic cues. Built to move pictures." />
 <meta property="og:image" content="https://jaxxslade.com/assets/og-v2.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="JAXX SLADE PICTURES — late-90s homepage for the trailer-music studio, 24 B-movie features" />
+<meta property="og:image:alt" content="Jaxx Slade Pictures — boutique trailer music catalogue" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="JAXX SLADE PICTURES — Official Home Page" />
-<meta name="twitter:description" content="24 features. Trailer music that moves pictures. Sound ON!!" />
+<meta name="twitter:title" content="Jaxx Slade Pictures — Boutique Trailer Music" />
+<meta name="twitter:description" content="24 features. More than 2,600 cinematic cues. Built to move pictures." />
 <meta name="twitter:image" content="https://jaxxslade.com/assets/og-v2.png" />
 <link rel="canonical" href="https://jaxxslade.com/" />
 <style>
-/* ============================================================
-   JAXX SLADE PICTURES — circa 1999. Built in Notepad. WHITE bg.
-   First-generation: WordArt, <marquee>, blink, beveled buttons,
-   Times + Impact + Courier, classic blue links on white.
-   ============================================================ */
+:root{--bg:#e8e5da;--surface:#efede4;--surface-2:#dfdcd1;--ink:#272825;--muted:#6f706a;--line:#c8c5ba;--accent:#353a31;--display:Georgia,"Times New Roman",serif;--sans:"Helvetica Neue",Helvetica,Arial,sans-serif;--mono:"SFMono-Regular",Consolas,"Liberation Mono",monospace}
 *{box-sizing:border-box}
-body{
-  margin:0; color:#1a1a1a;
-  background-color:#e7e7ee;
-  background-image:
-    repeating-linear-gradient(45deg, rgba(60,60,95,.035) 0 1px, transparent 1px 7px),
-    repeating-linear-gradient(-45deg, rgba(60,60,95,.035) 0 1px, transparent 1px 7px);
-  font-family:"Times New Roman",Times,serif; font-size:16px; line-height:1.45;
-}
-a{color:#0000ee;text-decoration:underline}
-a:visited{color:#551a8b}
-a:hover{color:#cc0000}
+html{background:var(--bg);scroll-behavior:smooth}
+body{margin:0;background-color:var(--bg);background-image:radial-gradient(rgba(39,40,37,.055) .45px,transparent .7px);background-size:4px 4px;color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration-color:#5b5b60;text-underline-offset:.2em;transition:color .15s ease,text-decoration-color .15s ease,background .15s ease,border-color .15s ease}
+a:hover{color:var(--accent);text-decoration-color:var(--accent)}
 img{border:0;display:block}
-hr{border:0;border-top:2px ridge #9aa;height:0;margin:14px 0}
-.mono{font-family:"Courier New",monospace}
-
-@keyframes blink{50%{opacity:0}}
-.blink{animation:blink 1s steps(1,end) infinite}
-
-.page{max-width:900px;margin:0 auto;padding:0 8px 40px;background:#fff;border-left:1px solid #cfcfd8;border-right:1px solid #cfcfd8}
-
-/* -------- news ticker (black LED bar) -------- */
-.ticker{background:#000;border:2px inset #888;color:#33ff66;font-family:"Courier New",monospace;font-size:14px;padding:5px 0;margin:8px 0}
-.ticker b{color:#ffe14d}
-.ticker .hot{color:#ff5a5a}
-
-/* -------- masthead -------- */
-.mast{text-align:center;padding:14px 0 4px}
-.mast img.logo{max-width:100%;height:auto;margin:0 auto}
-.mast .sub{font-family:"Arial Black",sans-serif;letter-spacing:.5em;font-size:18px;color:#000080;margin:2px 0 0;padding-left:.5em}
-.mast .welcome{font-family:"Comic Sans MS",cursive;color:#cc0066;font-size:14px;margin:8px 0 2px}
-.construction{font-family:"Arial Black",sans-serif;font-size:12px;color:#d2691e;letter-spacing:.15em}
-
-/* -------- nav -------- */
-.nav{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;padding:10px 0;border-top:2px groove #bbb;border-bottom:2px groove #bbb;margin:10px 0}
-.btn{
-  font-family:"Arial Black","Arial",sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:.04em;
-  background:#c0c0c0;color:#000;border:3px outset #f4f4f4;padding:5px 12px;text-decoration:none;cursor:pointer;white-space:nowrap;
-}
-.btn:hover{background:#d8d8d8;color:#000}
-.btn:active{border-style:inset}
-.btn.hotbtn{background:#ffe14d;border-color:#fff7b0}
-.btn.go{background:#001b6b;color:#fff;border-color:#5a78ff}
-.btn.go:hover{background:#0030c0;color:#fff}
-
-/* -------- section frames -------- */
-.box{border:3px ridge #9a9ad6;background:#ffffff;margin:16px 0;padding:0 0 14px}
-.boxhead{
-  font-family:"Arial Black",sans-serif;font-size:17px;text-transform:uppercase;letter-spacing:.05em;
-  background:linear-gradient(#2a2a99,#101046);color:#ffe14d;border-bottom:2px ridge #9a9ad6;
-  padding:7px 12px;text-shadow:1px 1px 0 #000;
-}
-.boxhead .small{font-family:"Courier New",monospace;font-size:11px;color:#bcd0ff;float:right;text-transform:none;letter-spacing:0;margin-top:3px}
-.boxbody{padding:12px 14px 0}
-
-/* -------- search -------- */
-.search p.q{font-size:16px;margin:0 0 8px}
-.search form{display:flex;flex-wrap:wrap;gap:6px;align-items:stretch}
-.search input{flex:1;min-width:160px;font-family:"Courier New",monospace;font-size:16px;padding:6px 8px;border:2px inset #888;background:#fff;color:#000}
-.search .submit{font-family:"Arial Black",sans-serif;font-size:13px;background:#c0c0c0;border:3px outset #f4f4f4;padding:4px 14px;cursor:pointer;color:#000}
-.search .submit:active{border-style:inset}
-.search .tries{font-family:"Courier New",monospace;font-size:12px;color:#666;margin-top:8px}
-
-/* -------- jukebox -------- */
-.jukeframe{background:#c0c0c0;border:3px outset #fff;padding:4px;margin:0 0 4px;overflow-x:auto}
-.ptbar{background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-family:"Arial",sans-serif;font-weight:bold;font-size:12px;padding:3px 7px;display:flex;justify-content:space-between;align-items:center}
-.ptbar .x{font-family:"Courier New",monospace;white-space:nowrap}
-.ptbar .x a,.wtbar .wbtns a{color:#000;background:#c0c0c0;border:1px outset #fff;padding:0 5px;text-decoration:none;font-family:"Courier New",monospace;margin-left:2px;line-height:1.3}
-.ptbar .x a:hover,.wtbar .wbtns a:hover{background:#dcdcdc;color:#000}
-.ptbar .x a:active,.wtbar .wbtns a:active{border-style:inset}
+hr{border:0;border-top:1px solid var(--line);margin:0}
+.mono{font-family:var(--mono)}
+.page{width:100%;padding:clamp(18px,2.5vw,36px) clamp(18px,4vw,72px) 56px}
+.page:before,.page:after{content:"+   ⊙";position:absolute;top:25px;color:var(--muted);font:18px var(--mono);letter-spacing:.35em}
+.page:before{left:clamp(18px,2vw,36px)}.page:after{right:clamp(18px,2vw,36px);transform:scaleX(-1)}
+.ticker{display:flex;justify-content:space-between;gap:24px;align-items:center;border-bottom:1px solid var(--line);padding:13px 0;color:var(--muted);font:10px/1.4 var(--mono);letter-spacing:.07em;text-transform:uppercase}
+.ticker strong{color:var(--ink);font-weight:500}
+.ticker a{color:var(--accent);white-space:nowrap;text-decoration:none}
+.mast{text-align:left;padding:clamp(58px,9vw,128px) clamp(0px,5vw,90px) clamp(48px,7vw,96px);border-bottom:1px solid var(--line)}
+.mast .brand{font-family:var(--display);font-size:clamp(70px,14vw,210px);font-weight:400;letter-spacing:-.085em;line-height:.72;text-transform:uppercase;max-width:1050px}
+.mast .brand span{display:block}
+.mast .sub{border-top:1px solid var(--muted);width:min(760px,75vw);padding-top:18px;letter-spacing:.25em;font:clamp(10px,1.2vw,15px) var(--mono);color:var(--muted);margin:40px 0 0;text-transform:uppercase}
+.mast .tagline{font:clamp(10px,1.1vw,14px) var(--mono);letter-spacing:.16em;color:var(--muted);margin-top:18px;text-transform:uppercase}
+.box{border-top:1px solid var(--line);margin:0;padding:clamp(28px,4vw,52px) 0}
+.boxhead{font-family:var(--display);font-size:clamp(28px,3.2vw,46px);font-weight:400;letter-spacing:-.03em;margin-bottom:24px}
+.boxhead .small{font:11px/1.4 var(--mono);color:var(--muted);float:right;letter-spacing:.02em;margin-top:12px}
+.boxbody{padding:0}
+.btn{display:inline-flex;align-items:center;background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 13px;text-decoration:none;cursor:pointer;white-space:nowrap}
+.btn:hover,.btn[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.search form{display:flex;gap:10px}
+.search input{flex:1;min-width:0;font:clamp(19px,2vw,26px)/1.2 var(--display);padding:15px 0;border:0;border-bottom:1px solid var(--muted);background:transparent;color:var(--ink);outline:none}
+.search input:focus{border-color:var(--accent)}
+.search .submit,.walic,.srcard .srplay{border:1px solid var(--accent);background:var(--accent);color:var(--bg);padding:12px 18px;font:600 11px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer}
+.search .submit:hover,.walic:hover,.srcard .srplay:hover{background:transparent;color:var(--accent)}
+.jukeframe{min-width:546px;background:var(--surface);border:1px solid var(--line);padding:8px;margin:0 0 20px;overflow-x:auto}
+.ptbar,.wtbar{color:var(--muted);font:10px/1.4 var(--mono);letter-spacing:.05em;text-transform:uppercase;padding:4px 4px 10px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.ptbar .x,.wtbar .wbtns{white-space:nowrap}
+.ptbar .x a,.wtbar .wbtns a{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;color:var(--muted);border:1px solid var(--line);text-decoration:none;margin-left:4px}
+.ptbar .x a:hover,.wtbar .wbtns a:hover{border-color:var(--accent);color:var(--accent)}
 .jukeframe.min iframe{display:none}
 .jukeframe.closed{display:none}
 .win.min .wbody,.win.min .wnav{display:none}
 .win.min .wtbar{cursor:pointer}
-.win.max{position:fixed;inset:8px;max-width:none;width:auto;margin:0;display:flex;flex-direction:column}
+.win.max{position:fixed;inset:12px;max-width:none;width:auto;margin:0;display:flex;flex-direction:column}
 .win.max .wbody{flex:1 1 auto;overflow:auto}
-#player{height:112px;border:0;display:block;background:#f6f6f6}
-/* persistent player: docks as a floating bar while a feature pop-up is open, so audio keeps playing as you browse */
-.jukeframe.dock{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;width:600px;max-width:calc(100vw - 18px);z-index:300;margin:0;overflow:hidden;box-shadow:5px 5px 0 rgba(0,0,0,.5)}
-.walbnote{font:12px "Courier New",monospace;color:#555;margin:0 0 8px}
-.jukehint{font-family:"Courier New",monospace;font-size:12px;color:#cc0066;text-align:center;margin:6px 0 10px}
-.jbl{margin:0;padding:0;list-style:none;columns:2;column-gap:26px}
-@media(max-width:640px){.jbl{columns:1}}
-.jbl li{break-inside:avoid;border-bottom:1px dotted #ccc;padding:5px 2px;font-size:15px;display:flex;gap:8px;align-items:baseline}
-.jbl li:hover{background:#eef}
-.jbl li.playing{background:#fffbcc;outline:2px ridge #cc0}
-.jbl li.playing .nm{font-weight:bold;color:#000}
-.jbl .num{font-family:"Courier New",monospace;color:#888;font-size:12px;width:22px}
-.jbl .pl{font-family:"Courier New",monospace;color:#008000;cursor:pointer;text-decoration:none;font-weight:bold}
-.jbl .pl:hover{color:#fff;background:#008000}
-.jbl .nm{cursor:pointer;color:#0000ee}
-.jbl .nm:hover{color:#cc0000;text-decoration:underline}
-.juke{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-start}
-.jukeplayer{flex:0 0 270px;max-width:100%;background:#c0c0c0;border:3px outset #fff;padding:6px}
-.jukeplayer .tbar{background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-family:"Arial",sans-serif;font-weight:bold;font-size:12px;padding:3px 6px;display:flex;justify-content:space-between}
-.jukeplayer .tbar span{background:#c0c0c0;color:#000;border:1px outset #fff;font-family:"Courier New",monospace;width:16px;text-align:center}
-.lcd{background:#001500;border:2px inset #060;color:#39ff6a;font-family:"Courier New",monospace;font-size:13px;padding:8px;margin:6px 0;height:64px;overflow:hidden;text-shadow:0 0 5px #39ff6a}
-.lcd .np{color:#9aff9a}
-.transport{display:flex;gap:4px;justify-content:center;margin:6px 0}
-.transport button{font-family:"Courier New",monospace;font-size:13px;background:#c0c0c0;border:2px outset #fff;width:34px;padding:3px 0;cursor:pointer}
-.transport button:active{border-style:inset}
-.visdots{height:22px;display:flex;gap:2px;align-items:flex-end;justify-content:center;margin-top:4px}
-.visdots i{width:5px;background:#39ff6a;display:block;animation:eq .8s ease-in-out infinite}
-@keyframes eq{0%,100%{height:3px}50%{height:20px}}
-.jukelist{flex:1;min-width:240px}
-.jukelist ol{margin:0;padding:0;list-style:none}
-.jukelist li{border-bottom:1px dotted #ccc;padding:4px 2px;font-size:15px;display:flex;gap:8px;align-items:baseline}
-.jukelist li:hover{background:#eef}
-.jukelist .pl{font-family:"Courier New",monospace;color:#008000;cursor:pointer;text-decoration:none;font-weight:bold}
-.jukelist .pl:hover{color:#fff;background:#008000}
-.jukelist .num{font-family:"Courier New",monospace;color:#888;font-size:12px;width:22px}
-.jukelist .nm a{color:#0000ee}
-.jukelist .yr{margin-left:auto;font-family:"Courier New",monospace;font-size:11px;color:#888}
-
-/* -------- catalog -------- */
-.filters{margin:0 0 12px;font-family:"Courier New",monospace;font-size:12px;color:#555}
-.filters .btn{font-family:"Courier New",monospace;font-size:11px;padding:3px 8px;border-width:2px;text-transform:uppercase}
-.filters .btn[aria-pressed="true"]{background:#ffe14d;border-color:#fff7b0}
-.viewsw{float:right}
-.viewsw a{font-family:"Courier New",monospace;font-size:11px}
-
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-@media(max-width:860px){.grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:430px){.grid{grid-template-columns:1fr}}
-.cell{border:3px ridge #bbb;background:#f6f6f6;padding:6px;text-align:center}
-.cell .pframe{position:relative;border:2px inset #aaa;background:#e8e8e8;display:block}
-.cell img.cov{width:100%;aspect-ratio:1/1;object-fit:cover}
-.cell .new{position:absolute;top:-9px;left:-9px;background:#ff0033;color:#fff;font-family:"Arial Black",sans-serif;font-size:10px;padding:2px 5px;border:2px outset #ff9aab;transform:rotate(-12deg)}
-.cell .code{font-family:"Courier New",monospace;font-size:10px;color:#777;margin-top:5px}
-.cell h4{font-family:"Arial Black",sans-serif;font-size:13px;margin:3px 0;line-height:1.1}
-.cell h4 a{color:#0000ee;text-decoration:underline}
-.cell .log{font-style:italic;font-size:12.5px;color:#333;margin:4px 2px 7px;line-height:1.3}
-.cell .tags{font-family:"Courier New",monospace;font-size:10px;color:#888;margin-bottom:6px}
-
-.textcat{display:none}
-.textcat.on{display:block}
-.grid.off{display:none}
-.textcat ol{margin:0;padding:0 0 0 22px}
-.textcat li{border-bottom:1px dotted #ccc;padding:3px 0;font-size:15px}
-.textcat .c{font-family:"Courier New",monospace;color:#777;font-size:12px}
-
-/* -------- about -------- */
-.about p{font-size:16px;margin:0 0 12px}
-.about .pull{font-family:"Arial Black",sans-serif;font-size:15px;color:#000080}
-
-/* -------- bottom album crawl -------- */
-.crawlhead{text-align:center;font-family:"Arial Black",sans-serif;color:#cc0099;font-size:14px;letter-spacing:.1em;margin:18px 0 4px}
-.crawl{border:3px ridge #9a9ad6;background:#ffffff;padding:8px 0}
-.crawl img{height:120px;width:auto;display:inline-block;border:2px outset #999;margin:0 5px;vertical-align:middle}
-
-/* -------- album feature popup -------- */
-.modal{position:fixed;inset:0;background:rgba(0,0,40,.55);z-index:100;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:22px 10px}
+#player{height:112px;border:0;display:block;background:#efede4;filter:grayscale(1) contrast(.92)}
+.jukeframe.dock{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;width:600px;min-width:546px;max-width:calc(100vw - 18px);z-index:300;margin:0;overflow-x:auto;box-shadow:0 16px 50px rgba(0,0,0,.55)}
+.walbnote{font:11px var(--mono);color:var(--muted);margin:0 0 10px}
+.jbl{margin:0;padding:0;list-style:none;columns:2;column-gap:clamp(24px,4vw,70px)}
+.jbl li{break-inside:avoid;border-bottom:1px solid var(--line);padding:10px 4px;font-size:14px;display:flex;gap:10px;align-items:baseline}
+.jbl li:hover{color:var(--accent)}
+.jbl li.playing{color:var(--accent);border-bottom-color:var(--accent)}
+.jbl .num{font:10px var(--mono);color:var(--muted);width:24px}
+.jbl .nm{cursor:pointer}
+.filters{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 22px;font:10px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
+.filters .btn{font:10px var(--mono);padding:7px 11px;text-transform:uppercase}
+.viewsw{margin-left:auto;white-space:nowrap}
+.viewsw a{font:10px var(--mono)}
+.tries{font:11px var(--mono);color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(28px,4vw,64px) clamp(14px,2vw,32px)}
+.cell{text-align:left;min-width:0}
+.cell .pframe{position:relative;background:var(--surface);display:block;overflow:hidden}
+.cell img.cov{width:100%;aspect-ratio:1;object-fit:cover;filter:grayscale(.15) saturate(.72) contrast(.92);transition:filter .18s ease,opacity .18s ease}
+.cell .pframe:hover img{filter:grayscale(0) saturate(.92) contrast(.98);opacity:.92}
+.cell .new,.srbadge-new{position:absolute;top:10px;left:10px;background:var(--accent);color:var(--bg);padding:4px 7px;font:600 9px var(--mono);letter-spacing:.08em;z-index:2}
+.cell .code{font:9px var(--mono);letter-spacing:.06em;color:var(--muted);margin-top:12px;text-transform:uppercase}
+.cell h4{font-family:var(--display);font-size:clamp(17px,1.5vw,22px);font-weight:400;margin:5px 0;line-height:1.2}
+.cell h4 a{text-decoration:none}
+.cell .log{font-family:var(--display);font-size:13px;color:var(--muted);margin:7px 0;line-height:1.5}
+.cell .tags{font:9px var(--mono);letter-spacing:.05em;color:var(--muted);text-transform:uppercase}
+.textcat{display:none}.textcat.on{display:block}.grid.off{display:none}
+.textcat ol{margin:0;padding:0;list-style:none}
+.textcat li{border-bottom:1px solid var(--line);padding:12px 0;font-size:14px}
+.textcat .c{font:10px var(--mono);color:var(--muted)}
+.crawl{display:none}
+.modal{position:fixed;inset:0;background:rgba(39,40,37,.78);backdrop-filter:blur(5px);z-index:100;display:flex;align-items:flex-start;justify-content:center;overflow:auto;padding:22px 10px}
 .modal[hidden]{display:none}
 body.playerdocked .modal{padding-bottom:165px}
-.win{background:#c0c0c0;border:3px outset #fff;max-width:680px;width:100%;margin:auto;box-shadow:5px 5px 0 rgba(0,0,0,.45)}
-.wtbar{background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-family:"Arial",sans-serif;font-weight:bold;font-size:13px;padding:4px 8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.win{background:var(--surface);border:1px solid var(--line);max-width:820px;width:100%;margin:auto;box-shadow:0 30px 100px rgba(34,34,31,.35)}
+#albmodal.modal{inset:0 0 0 auto;width:min(680px,calc(100vw - 24px));padding:12px 12px 12px 0;background:transparent;backdrop-filter:none;overflow:visible;align-items:stretch;justify-content:flex-end;pointer-events:none}
+#albmodal .win{max-width:none;width:100%;height:calc(100vh - 24px);margin:0;display:flex;flex-direction:column;pointer-events:auto;box-shadow:-18px 0 60px rgba(34,34,31,.18)}
+#albmodal .wbody{flex:1;overflow-y:auto}
+#albmodal .albumplayer{margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+#albmodal .albumplayer .jukeframe{width:100%;min-width:0;margin:0}
+#albmodal .albumplayer + .walbnote{margin-top:18px}
+#albmodal.minimized{inset:auto 12px 12px auto;width:min(600px,calc(100vw - 24px));height:auto;padding:0}
+#albmodal.minimized .win{height:auto;flex-direction:column;box-shadow:0 12px 40px rgba(34,34,31,.22)}
+#albmodal.minimized .wtbar{width:100%;flex:none;border-bottom:0}
+#albmodal.minimized .wbody{display:block;flex:none;padding:0;overflow:hidden}
+#albmodal.minimized .wcols{display:block}
+#albmodal.minimized .wposter,#albmodal.minimized .wcode,#albmodal.minimized .winfo h3,#albmodal.minimized .wsyn,#albmodal.minimized .walbnote,#albmodal.minimized .walbtracks,#albmodal.minimized .walic{display:none}
+#albmodal.minimized .albumplayer{display:block;margin:0;padding:0;border:0}
+#albmodal.minimized .albumplayer .jukeframe{display:block;margin:0;padding:4px;border-width:1px 0;overflow-x:auto}
+#albmodal.minimized .albumplayer .ptbar{display:none}
+#albmodal.minimized .wnav{display:flex;flex:0 0 auto;padding:5px 8px;border-top:0;gap:4px}
+#albmodal.minimized .wnav button{width:30px;height:30px;padding:0;font-size:0}
+#albmodal.minimized #aprev::after{content:"\25C0";font-size:11px}
+#albmodal.minimized #anext::after{content:"\25B6";font-size:11px}
+#playerhome:empty{display:none}
+.wtbar{padding:10px 12px;border-bottom:1px solid var(--line)}
 .wtbar #wtitle{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.wtbar .wbtns{font-family:"Courier New",monospace;white-space:nowrap}
-.wtbar .wbtns a{color:#000;background:#c0c0c0;border:1px outset #fff;padding:0 5px;text-decoration:none;margin-left:3px}
-.wbody{background:#fff;padding:14px;border:2px inset #888;margin:4px}
-.wcols{display:flex;gap:16px}
-@media(max-width:560px){
-  .wcols{flex-direction:column}.wposter img{width:160px}
-  .jukeframe,.wplayer{-webkit-overflow-scrolling:touch}
-  .wplayer{overflow-x:auto}.wplayer iframe{width:640px;max-width:none}
-}
-.wposter img{width:210px;max-width:100%;border:2px outset #999}
+.wbody{background:var(--surface);padding:clamp(16px,3vw,32px)}
+.wcols{display:flex;gap:clamp(18px,3vw,36px)}
+.wposter img{width:260px;max-width:100%}
 .winfo{flex:1;min-width:0}
-.wcode{font-family:"Courier New",monospace;font-size:11px;color:#777;margin-bottom:4px}
-.winfo h3{font-family:"Arial Black",sans-serif;font-size:21px;margin:0 0 8px;color:#000080;line-height:1.05}
-.wsyn{font-size:14.5px;line-height:1.45;margin:0 0 12px}
-.wplayer{margin:0 0 12px;background:#c0c0c0;border:3px outset #fff;padding:4px}
-.wplayer iframe{width:100%;height:112px;border:0;display:block;background:#f6f6f6}
-.wnone{font-family:"Courier New",monospace;font-size:12px;color:#666;padding:16px 12px;text-align:center;background:#eef;border:2px inset #aaa;margin:0 0 12px}
-.walbhint{font-family:"Courier New",monospace;font-size:11px;color:#cc0066;margin:8px 0 4px}
-.walbtracks{list-style:none;margin:0 0 12px;padding:0}
-.walbtracks li{border-bottom:1px dotted #ccc;padding:4px 2px;font-size:14px;display:flex;gap:8px;align-items:baseline}
-.walbtracks li:hover{background:#eef}
-.walbtracks li.playing{background:#fffbcc;outline:1px solid #cc0}
-.walbtracks li.playing .nm{font-weight:bold;color:#000}
-.walbtracks .pl{font-family:"Courier New",monospace;color:#008000;font-weight:bold;text-decoration:none;cursor:pointer}
-.walbtracks .pl:hover{color:#fff;background:#008000}
-.walbtracks .nm{cursor:pointer;color:#0000ee}
-.walbtracks .nm:hover{text-decoration:underline;color:#c00}
-.walic{display:inline-block;font-family:"Arial Black",sans-serif;font-size:12px;background:#001b6b;color:#fff;border:3px outset #5a78ff;padding:8px 13px;text-decoration:none}
-.walic:hover{background:#0030c0;color:#fff}
-.wnav{display:flex;justify-content:space-between;align-items:center;padding:5px 8px 8px;gap:8px}
-.wnav button{font-family:"Arial Black",sans-serif;font-size:12px;background:#c0c0c0;border:3px outset #fff;padding:6px 13px;cursor:pointer}
-.wnav button:active{border-style:inset}
-.acount{font-family:"Courier New",monospace;font-size:12px;color:#333}
-
-/* -------- SCREENING ROOM teaser (home view entry banner) -------- */
-.srteaser{display:block;margin:14px 0 4px;background:#000;text-align:center;text-decoration:none;color:#fff;border:3px outset #777;cursor:pointer;overflow:hidden}
-.srteaser:hover{border-color:#bbb;color:#fff}
-.srteaser .filmedge{display:block;height:16px;background-color:#000;background-image:repeating-linear-gradient(90deg,#fff 0 14px,#000 14px 34px)}
-.srteaser .srtcore{padding:14px 12px 12px;background:radial-gradient(ellipse at center,#1a0a4a 0%,#000028 70%,#000 100%);position:relative}
-.srteaser .srtitle{font-family:"Impact","Arial Black",sans-serif;font-size:34px;color:#ff66cc;letter-spacing:.12em;line-height:1;margin:0;text-shadow:2px 2px 0 #aa0066, -1px -1px 0 #66e6ff, 0 0 14px rgba(255,102,204,.45)}
-.srteaser .srsub{font-family:"Courier New",monospace;font-size:13px;color:#ffe14d;margin:7px 0 0;letter-spacing:.1em;text-transform:uppercase}
-.srteaser .srlist{font-family:"Arial Black",sans-serif;font-size:12.5px;color:#fff;margin-top:5px;letter-spacing:.04em}
-.srteaser .srlist b{color:#ffe14d}
-.srteaser .srlist .hot{color:#ff5a5a}
-@media(max-width:520px){.srteaser .srtitle{font-size:26px}.srteaser .srlist{font-size:11.5px}}
-
-/* -------- SCREENING ROOM modal -------- */
-#srmodal .srhead{text-align:center;margin:0 0 12px;padding:8px;background:#000;border:3px outset #777}
-#srmodal .srhead .srbanner{display:block;margin:0 auto;max-width:100%}
-#srmodal .srhead .srh1{font-family:"Impact","Arial Black",sans-serif;font-size:30px;color:#ff66cc;letter-spacing:.08em;line-height:1;margin:6px 0 0;text-shadow:2px 2px 0 #aa0066,0 0 12px rgba(255,102,204,.4)}
-#srmodal .srhead .srh2{font-family:"Courier New",monospace;font-size:12px;color:#ffe14d;letter-spacing:.18em;margin:5px 0 0}
-.srintro{font-family:"Courier New",monospace;font-size:12px;color:#555;text-align:center;margin:0 0 14px;padding:7px 9px;border:2px ridge #d2691e;background:#fff8e6}
-.srcard{border:3px ridge #9a9ad6;background:#fff;margin:0 0 18px;position:relative}
-.srcard .srbar{background:linear-gradient(#2a2a99,#101046);color:#ffe14d;font-family:"Arial Black",sans-serif;font-size:13px;letter-spacing:.05em;padding:6px 10px;display:flex;justify-content:space-between;align-items:center;gap:8px;text-shadow:1px 1px 0 #000}
-.srcard .srbar .srbar-r{font-family:"Courier New",monospace;font-size:11px;color:#bcd0ff;letter-spacing:.04em;text-transform:none;text-shadow:none;white-space:nowrap}
-.srcard .srbody{padding:11px 13px 13px}
-.srcard h4{font-family:"Impact","Arial Black",sans-serif;font-size:30px;color:#000;letter-spacing:.04em;margin:0 0 3px;line-height:1}
-.srcard h4 .yr{font-family:"Times New Roman",serif;font-style:italic;font-size:15px;color:#666;font-weight:normal;letter-spacing:0;margin-left:6px}
-.srcard .srfeat{font-family:"Courier New",monospace;font-size:13px;color:#060;margin:0 0 10px;line-height:1.4}
-.srcard .srfeat b{color:#cc0066;text-transform:uppercase;letter-spacing:.04em}
-.srcard .srvid{position:relative;background:#000;border:3px outset #777;padding:5px;margin:0 0 10px}
+.wcode{font:10px var(--mono);letter-spacing:.05em;color:var(--muted);margin-bottom:10px;text-transform:uppercase}
+.winfo h3{font-family:var(--display);font-size:clamp(30px,4vw,52px);font-weight:400;letter-spacing:-.04em;margin:0 0 14px;line-height:1}
+.wsyn{font-family:var(--display);font-size:15px;color:var(--muted);line-height:1.6;margin:0 0 20px}
+.wnone{font:11px var(--mono);color:var(--muted);padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 18px}
+.walbtracks{list-style:none;margin:0 0 18px;padding:0;max-height:220px;overflow:auto}
+.walbtracks li{border-bottom:1px solid var(--line);padding:8px 2px;font-size:13px}
+.walbtracks li:hover,.walbtracks li.playing{color:var(--accent)}
+.walbtracks .nm{cursor:pointer}
+.walic{display:inline-block}
+.wnav{display:flex;justify-content:space-between;align-items:center;padding:12px;border-top:1px solid var(--line);gap:8px}
+.wnav button{font:10px var(--mono);letter-spacing:.05em;background:transparent;color:var(--ink);border:1px solid var(--line);padding:9px 13px;cursor:pointer}
+.wnav button:hover{border-color:var(--accent);color:var(--accent)}
+.acount{font:10px var(--mono);color:var(--muted)}
+.srteaser{display:grid;grid-template-columns:1fr auto;align-items:end;gap:24px;margin:clamp(52px,8vw,100px) 0;padding:clamp(28px,5vw,68px);min-height:300px;background:transparent;border:1px solid var(--line);text-decoration:none;color:var(--ink);cursor:pointer}
+.srteaser:hover{border-color:#55555a;color:var(--ink)}
+.srteaser .filmedge{display:none}
+.srteaser .srtcore{display:contents}
+.srteaser .srtitle{font-family:var(--display);font-size:clamp(46px,7vw,110px);font-weight:400;letter-spacing:-.06em;line-height:.88}
+.srteaser .srsub{font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.srteaser .srlist{grid-column:1/-1;font-family:var(--display);font-size:clamp(14px,1.4vw,18px);color:var(--muted)}
+.srteaser .srlist b{color:var(--ink);font-weight:400}
+.srteaser .srlist .hot{color:var(--accent);font:10px var(--mono);letter-spacing:.08em}
+#srmodal .srhead{text-align:center;margin:0 0 24px;padding:20px;background:var(--surface-2);border:1px solid var(--line)}
+#srmodal .srhead .srbanner{display:none}
+#srmodal .srhead .srh1{font-family:var(--display);font-size:clamp(42px,7vw,84px);font-weight:400;letter-spacing:-.06em;line-height:.9}
+#srmodal .srhead .srh2{font:10px var(--mono);color:var(--muted);letter-spacing:.18em;margin:14px 0 0}
+.srintro{font:11px/1.6 var(--mono);color:var(--muted);margin:0 0 24px}
+.srcard{border-top:1px solid var(--line);padding:24px 0;margin:0;position:relative}
+.srcard .srbar{color:var(--muted);font:10px var(--mono);letter-spacing:.05em;display:flex;justify-content:space-between;gap:8px;text-transform:uppercase}
+.srcard .srbar .srbar-r{white-space:nowrap}
+.srcard .srbody{padding:14px 0 0}
+.srcard h4{font-family:var(--display);font-size:clamp(30px,4vw,48px);font-weight:400;letter-spacing:-.04em;margin:0 0 5px;line-height:1}
+.srcard h4 .yr{font:13px Georgia,serif;color:var(--muted);margin-left:6px}
+.srcard .srfeat{font:11px var(--mono);color:var(--muted);margin:0 0 16px}
+.srcard .srfeat b{color:var(--accent);font-weight:500;text-transform:uppercase}
+.srcard .srvid{background:#000;margin:0 0 14px}
 .srcard .srvid iframe{width:100%;aspect-ratio:16/9;border:0;display:block;background:#000}
-.srcard .srrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
-.srcard .srplay{font-family:"Arial Black",sans-serif;font-size:12px;background:#001b6b;color:#fff;border:3px outset #5a78ff;padding:5px 11px;text-decoration:none;cursor:pointer;display:inline-block}
-.srcard .srplay:hover{background:#0030c0;color:#fff}
-.srcard .srextra{flex:1;font-family:"Courier New",monospace;font-size:11px;color:#888;text-align:right;min-width:120px}
-.srbadge-new{position:absolute;top:-9px;right:-9px;background:#ff0033;color:#fff;font-family:"Arial Black",sans-serif;font-size:11px;padding:3px 7px;border:2px outset #ff9aab;transform:rotate(8deg);z-index:2}
-.srdisclaimer{text-align:center;font-family:"Courier New",monospace;font-size:11px;color:#666;margin-top:14px;padding-top:10px;border-top:1px dashed #999;line-height:1.5}
-
-/* -------- footer cruft -------- */
-.foot{text-align:center;margin-top:22px;font-size:13px;color:#333}
-.counter{display:inline-block;background:#000;border:2px inset #888;padding:3px 5px;margin:6px 0}
-.counter b{font-family:"Courier New",monospace;background:#111;color:#39ff6a;border:1px solid #333;padding:2px 3px;margin:0 1px;font-size:16px}
-.badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin:10px 0}
-.badge{font-family:"Arial",sans-serif;font-size:10px;font-weight:bold;border:2px outset #999;padding:3px 6px;text-decoration:none}
-.b-ns{background:linear-gradient(#444,#000);color:#9cf}
-.b-ie{background:linear-gradient(#0af,#06c);color:#fff}
-.b-html{background:#fc6;color:#000}
-.b-ring{background:#202;color:#f9f}
-.foot .webmaster{font-family:"Courier New",monospace;font-size:12px;color:#060}
-.foot .small{font-size:11px;color:#777}
-.uc{font-family:"Arial Black",sans-serif;color:#d2691e;font-size:13px;letter-spacing:.08em}
+.srcard .srrow{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.srcard .srextra{flex:1;font:10px var(--mono);color:var(--muted);text-align:right;min-width:120px}
+.srbadge-new{top:20px;left:auto;right:0}
+.srdisclaimer{text-align:center;font:10px/1.6 var(--mono);color:var(--muted);margin-top:14px;padding-top:18px;border-top:1px solid var(--line)}
+.foot{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;padding:28px 0 0;font:10px/1.6 var(--mono);letter-spacing:.04em;color:var(--muted)}
+.foot .small{text-align:right}
+@media(max-width:900px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.boxhead .small{float:none;display:block;margin-top:8px}.srteaser{grid-template-columns:1fr}}
+@media(max-width:680px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.jbl{columns:1}.wcols{flex-direction:column}.wposter img{width:180px}.srteaser .srsub{grid-column:1}.viewsw{width:100%;margin:0}.foot{display:block}.foot .small{text-align:left;margin-top:10px}}
+@media(max-width:560px){.jukeframe,.jukeframe.dock{width:100%;min-width:0}.page{padding-inline:14px}.page:before,.page:after{display:none}.ticker{align-items:flex-start;font-size:8px}.ticker span{max-width:205px}.grid{gap:28px 12px}.cell .log{display:none}.search form{display:block}.search .submit{width:100%;margin-top:10px}.srteaser{padding:24px;min-height:250px}.srcard .srbar{display:block}.srcard .srbar-r{display:block;margin-top:5px}.modal{padding:8px}.win.max{inset:4px}.wbody{padding:16px}#albmodal.modal{inset:auto 0 0;width:100vw;height:76vh;padding:0}#albmodal .win{height:100%;border-width:1px 0 0;box-shadow:0 -18px 50px rgba(34,34,31,.2)}#albmodal.minimized{inset:auto 10px 10px auto;width:calc(100vw - 20px);height:auto}#albmodal.minimized .win{height:auto;border-width:1px;box-shadow:0 10px 35px rgba(34,34,31,.22)}#albmodal .wposter img{width:130px}}
 </style>
 </head>
 <body>
@@ -273,33 +176,32 @@ body.playerdocked .modal{padding-bottom:165px}
 
   <!-- ===== NEWS TICKER ===== -->
   <div class="ticker">
-    <marquee scrollamount="6" behavior="scroll" direction="left">
-      <span class="hot">&#9733; NEW &#9733;</span> JAXX SLADE music HEARD IN <b>WOLFMAN</b> &middot; <b>FANTASTIC FOUR</b> &middot; <b>SMILE 2</b> &mdash; <a href="#" onclick="openSR();return false;" style="color:#ffe14d">visit the SCREENING ROOM &raquo;</a> &nbsp;&bull;&nbsp;
-      <b>&#9733; NOW SHOWING &#9733;</b> &nbsp; 24 FEATURES in 4 years &nbsp;&bull;&nbsp; a NEW album every 60 days &nbsp;&bull;&nbsp; 199 primary cues &nbsp;&bull;&nbsp; 2,643 deliverables &nbsp;&bull;&nbsp; <span class="hot">HOT!</span> The Thirteenth Reckoning &mdash; OUT NOW &nbsp;&bull;&nbsp; dark / heroic / hybrid &nbsp;&bull;&nbsp; <b>SOUND ON!!</b> &nbsp;&bull;&nbsp; sign the guestbook &nbsp;&bull;&nbsp; best viewed in Netscape Navigator 4.0 &nbsp;&bull;&nbsp;
-    </marquee>
+    <span><strong>Recent placements</strong> &nbsp; Wolfman · Fantastic Four · Smile 2</span>
+    <a href="#" onclick="openSR();return false;">View screening room →</a>
   </div>
 
   <!-- ===== MASTHEAD ===== -->
   <div class="mast">
     <a name="top"></a>
-    <img class="logo" src="assets/logo_wordart.png?v=2" alt="JAXX SLADE" />
-    <div class="sub">P&nbsp;I&nbsp;C&nbsp;T&nbsp;U&nbsp;R&nbsp;E&nbsp;S</div>
+    <div class="brand" aria-label="Jaxx Slade Pictures"><span>Jaxx</span><span>Slade</span><span>Pictures</span></div>
+    <div class="sub">24 features &middot; 2,600+ cinematic cues</div>
+    <div class="tagline">Built to move pictures</div>
   </div>
 
   <!-- ===== SCREENING ROOM TEASER ===== -->
   <a href="#" class="srteaser" onclick="openSR();return false;" title="See where Jaxx Slade music has been heard">
     <span class="filmedge"></span>
     <div class="srtcore">
-      <div class="srtitle">&#9733; SCREENING ROOM &#9733;</div>
-      <div class="srsub">&#127916; Now showing in a theatre near you &#127916;</div>
-      <div class="srlist"><b>WOLFMAN</b> &middot; <b>FANTASTIC FOUR</b> &middot; <b>SMILE 2</b> &mdash; <span class="hot blink">CLICK HERE!</span></div>
+      <div class="srtitle">Screening<br>Room</div>
+      <div class="srsub">Selected placements →</div>
+      <div class="srlist"><b>Wolfman</b> · <b>Fantastic Four</b> · <b>Smile 2</b> — <span class="hot">View films</span></div>
     </div>
     <span class="filmedge"></span>
   </a>
 
   <!-- ===== SEARCH ===== -->
   <div class="box search" id="findcue">
-    <div class="boxhead">&#128269; Find A Cue <span class="small">searches the LIVE catalogue on SourceAudio</span></div>
+    <div class="boxhead">Find a cue <span class="small">Searches the live catalogue on SourceAudio</span></div>
     <div class="boxbody">
       <form action="https://jaxxslade.sourceaudio.com/tracks" method="get" target="_blank" rel="noopener">
         <input name="s" type="search" autocomplete="off" />
@@ -310,11 +212,13 @@ body.playerdocked .modal{padding-bottom:165px}
 
   <!-- ===== JUKEBOX ===== -->
   <div class="box" id="jukebox">
-    <div class="boxhead">&#9835; The Jaxx Slade Jukebox <span class="small">&#9658; real SourceAudio audio &mdash; plays right here</span></div>
+    <div class="boxhead">The Jaxx Slade jukebox <span class="small">Official SourceAudio player — plays here</span></div>
     <div class="boxbody">
-      <div class="jukeframe">
-        <div class="ptbar">&#9835; JAXX&middot;SLADE&middot;PLAYER &mdash; <span id="npname">&hellip;</span> <span class="x"><a href="#" class="pwin" data-act="min" title="minimize">_</a><a href="#" class="pwin" data-act="max" title="restore">&#9633;</a><a href="#" class="pwin" data-act="close" title="close">&#10005;</a></span></div>
-        <iframe id="player" title="Jaxx Slade SourceAudio player" scrolling="no" frameborder="0"></iframe>
+      <div id="playerhome">
+        <div class="jukeframe">
+          <div class="ptbar">JAXX&middot;SLADE&middot;PLAYER &mdash; <span id="npname">&hellip;</span> <span class="x"><a href="#" class="pwin" data-act="min" title="minimize">_</a><a href="#" class="pwin" data-act="max" title="restore">&#9633;</a><a href="#" class="pwin" data-act="close" title="close">&#10005;</a></span></div>
+          <iframe id="player" title="Jaxx Slade SourceAudio player" scrolling="no" frameborder="0" allow="autoplay"></iframe>
+        </div>
       </div>
       <ol id="jukelist" class="jbl"></ol>
     </div>
@@ -322,7 +226,7 @@ body.playerdocked .modal{padding-bottom:165px}
 
   <!-- ===== CATALOG ===== -->
   <div class="box" id="catalog">
-    <div class="boxhead">&#127902; The Catalog &mdash; 24 Features <span class="small">click a poster to open the feature &mdash; browse them all</span></div>
+    <div class="boxhead">The catalogue — 24 features <span class="small">Click a cover to open the feature</span></div>
     <div class="boxbody">
       <div class="filters">
         <span class="viewsw">view: <a href="#" id="vPosters"><b>[Posters]</b></a> <a href="#" id="vText">[Text-only]</a></span>
@@ -334,41 +238,26 @@ body.playerdocked .modal{padding-bottom:165px}
     </div>
   </div>
 
-  <!-- ===== BOTTOM ALBUM CRAWL ===== -->
-  <div class="crawl">
-    <marquee scrollamount="4" behavior="scroll" direction="left" id="crawl"></marquee>
-  </div>
+  <!-- Kept as a hidden JS hook; the visible crawl was redundant with the catalogue. -->
+  <div class="crawl" id="crawl" hidden></div>
 
-  <!-- ===== FOOTER CRUFT ===== -->
+  <!-- ===== FOOTER ===== -->
   <hr>
   <div class="foot">
-    <div class="uc">&#128679; this site is always UNDER CONSTRUCTION &#128679;</div>
-    <div class="counter">You are visitor number:
-      <b>0</b><b>0</b><b>9</b><b>9</b><b>9</b><b>9</b><b>9</b>
-    </div>
-    <div class="badges">
-      <a class="badge b-ns" href="#top">Netscape Now!</a>
-      <a class="badge b-ie" href="#top">Get Internet Explorer 5</a>
-      <a class="badge b-html" href="#top">Made with NotePad</a>
-      <a class="badge b-ring" href="#top">&#9668; Trailer-Music WebRing &#9658;</a>
-    </div>
-    <div class="webmaster">&#9993; webmaster@jaxxslade.com &nbsp;|&nbsp; Last updated: 06/17/2026</div>
-    <p class="small">Best viewed in Netscape Navigator 4.0 at 800&times;600 with sound ON &#128266;<br>
-      &copy; 2026 Jaxx Slade Pictures. All rights reserved. &nbsp; <a href="https://catalog.jaxxslade.com" target="_blank" rel="noopener">catalog.jaxxslade.com</a><br>
-      <span class="blink" style="color:#ff0000">Sign my guestbook!</span>
-    </p>
+    <div>Jaxx is still waiting for Netscape to load.</div>
+    <div class="small">&copy; 2026 Jaxx Slade Pictures. All rights reserved.<br><a href="https://catalog.jaxxslade.com" target="_blank" rel="noopener">Full catalogue ↗</a></div>
   </div>
 </div>
 
-<!-- ===== ALBUM FEATURE POPUP ===== -->
+<!-- ===== ALBUM LISTENING DRAWER ===== -->
 <div id="albmodal" class="modal" hidden>
-  <div class="win" role="dialog" aria-modal="true" aria-label="Album feature">
-    <div class="wtbar"><span id="wtitle">JAXX SLADE PICTURES</span><span class="wbtns"><a href="#" id="wmin" title="minimize">_</a><a href="#" id="wmax" title="maximize">&#9633;</a><a href="#" id="wclose" title="close">&#10005;</a></span></div>
+  <div class="win" role="region" aria-label="Album listening drawer">
+    <div class="wtbar"><span id="wtitle">JAXX SLADE PICTURES</span><span class="wbtns"><a href="#" id="wmin" title="minimize to bottom">_</a><a href="#" id="wmax" title="expand">&#9633;</a><a href="#" id="wclose" title="close">&#10005;</a></span></div>
     <div class="wbody" id="wbody"></div>
     <div class="wnav">
-      <button id="aprev" type="button">&#9668; PREV</button>
+      <button id="aprev" type="button" title="previous track">&#9668; PREVIOUS TRACK</button>
       <span class="acount" id="acount"></span>
-      <button id="anext" type="button">NEXT &#9658;</button>
+      <button id="anext" type="button" title="next track">NEXT TRACK &#9658;</button>
     </div>
   </div>
 </div>
@@ -422,7 +311,7 @@ document.getElementById('crawl').innerHTML = SLATE.map(a=>
 document.getElementById('grid').innerHTML = SLATE.map((a,i)=>`
   <div class="cell" data-f="${a.f.join(' ')}">
     <a class="pframe" href="${url(a)}" onclick="openAlbum(${i});return false;" title="open ${esc(a.t)}">
-      ${a.y>=2026?'<span class="new blink">NEW!</span>':''}
+      ${a.y>=2026?'<span class="new">New</span>':''}
       <img class="cov" src="${a.img}" alt="${esc(a.t)}" loading="lazy">
     </a>
     <div class="code">${a.c} &middot; ${a.y} &middot; ${a.n} trk</div>
@@ -452,7 +341,7 @@ const JUKE=[
  {t:"After the Ember",c:"154877e349c2b3644d162e891af937f117a944"},
  {t:"Dead By Morning",c:"1548780bbdd301500f54e35c58b72309156a21"},
 ];
-const embedURL=(c,w)=>"https://jaxxslade.sourceaudio.com/embed.php?code="+c+"&art=1&backgroundColor=f6f6f6&borderColor=000000&textColor=000080&width="+(w||640);
+const embedURL=(c,w)=>"https://jaxxslade.sourceaudio.com/embed.php?code="+c+"&art=1&backgroundColor=efede4&borderColor=c8c5ba&textColor=272825&width="+(w||640);
 function setPlayer(f,c){const p=f.parentElement;const w=Math.max(538,Math.round(((p&&p.clientWidth)||648)-8));f.style.width=w+'px';f.src=embedURL(c,w);}
 const player=document.getElementById('player'), npname=document.getElementById('npname'), jbl=document.getElementById('jukelist');
 jbl.innerHTML=JUKE.map((j,i)=>`<li data-i="${i}"><span class="num">${String(i+1).padStart(2,'0')}.</span><span class="nm" onclick="jukePlay(${i})">${esc(j.t)}</span></li>`).join('');
@@ -491,7 +380,7 @@ const vP=document.getElementById('vPosters'), vT=document.getElementById('vText'
 vP.onclick=e=>{e.preventDefault();grid.classList.remove('off');textcat.classList.remove('on');vP.innerHTML='<b>[Posters]</b>';vT.innerHTML='[Text-only]';};
 vT.onclick=e=>{e.preventDefault();grid.classList.add('off');textcat.classList.add('on');vP.innerHTML='[Posters]';vT.innerHTML='<b>[Text-only]</b>';};
 
-/* ---- album feature popup (browse the whole slate) ---- */
+/* ---- album listening drawer (browse the whole slate without blocking the page) ---- */
 const ALBUM_CUE={
  JXS024:"1548631bae4f3097015ed0659d6589f5e37149",
  JXS022:"154875c32f89349dcbbc3494b66ff836ae418d",
@@ -502,14 +391,33 @@ const ALBUM_CUE={
 };
 /* ALBUM_TRACKS (all 24 albums, 200 cues) is loaded from album_tracks.js above */
 const modal=document.getElementById('albmodal'), wbody=document.getElementById('wbody'), wtitle=document.getElementById('wtitle'), acount=document.getElementById('acount');
-let curAlb=0;
+const playerHome=document.getElementById('playerhome');
+let curAlb=0, curTrack=0;
+function sizePlayerOnly(){
+  const frame=player.parentElement;
+  const w=Math.max(538,Math.round(((frame&&frame.clientWidth)||546)-16));
+  player.style.width=w+'px';
+}
+function playerToHome(){
+  const frame=player.parentElement;
+  if(frame.parentElement!==playerHome)playerHome.appendChild(frame);
+  sizePlayerOnly();
+}
+function playerToAlbum(){
+  const mount=document.getElementById('albumplayer');
+  if(!mount)return;
+  mount.appendChild(player.parentElement);
+  sizePlayerOnly();
+}
 function renderAlbum(){
   const a=SLATE[curAlb], tracks=ALBUM_TRACKS[a.c], cue=ALBUM_CUE[a.c];
   wtitle.textContent='JAXX SLADE PICTURES — '+a.t;
-  acount.textContent='Feature '+(curAlb+1)+' / '+SLATE.length;
+  const currentTrack=tracks?tracks.findIndex(tr=>tr.c===curCue):-1;
+  curTrack=currentTrack;
+  acount.textContent=tracks?(curTrack>=0?'Track '+(curTrack+1)+' / '+tracks.length:tracks.length+' preview tracks'):'Album preview';
   let playerHTML;
   if(tracks){
-    playerHTML = `<div class="walbnote">&#9658; click a cue &mdash; it plays in the floating player &amp; keeps going as you browse</div>
+    playerHTML = `<div class="walbnote">The first cue starts automatically. Choose any cue or use Previous / Next while the catalogue remains browsable.</div>
       <ol class="walbtracks">${tracks.map((tr,k)=>`<li class="${tr.c===curCue?'playing':''}"><span class="nm" onclick="albPlay(${k})">${esc(tr.t)}</span></li>`).join('')}</ol>`;
   } else {
     playerHTML = `<div class="wnone">&#9658; all ${a.n} cues stream on SourceAudio &mdash; hit the button below</div>`;
@@ -520,27 +428,59 @@ function renderAlbum(){
       <div class="wcode">${a.c} &middot; ${a.y} &middot; ${a.n} cues &middot; ${esc(a.tag)}</div>
       <h3>${esc(a.t)}</h3>
       <p class="wsyn">${esc(a.log)}</p>
+      <div id="albumplayer" class="albumplayer"></div>
       ${playerHTML}
-      <a class="walic" href="${url(a)}" target="_blank" rel="noopener">&#9658; HEAR &amp; LICENSE ALL ${a.n} CUES ON SOURCEAUDIO &raquo;</a>
+      <a class="walic" href="${url(a)}" target="_blank" rel="noopener">HEAR &amp; LICENSE ALL ${a.n} CUES ON SOURCEAUDIO &raquo;</a>
     </div></div>`;
 }
 function albPlay(k){
   const a=SLATE[curAlb], tracks=ALBUM_TRACKS[a.c]; if(!tracks||!tracks[k])return;
+  curTrack=k;
   playCue(tracks[k].c, a.t+' — '+tracks[k].t);
+  wtitle.textContent=a.t+' — '+tracks[k].t;
   document.querySelectorAll('.walbtracks li').forEach((li,idx)=>li.classList.toggle('playing',idx===k));
+  acount.textContent='Track '+(curTrack+1)+' / '+tracks.length;
 }
-function openAlbum(i){curAlb=(i+SLATE.length)%SLATE.length; renderAlbum(); modal.hidden=false; document.body.style.overflow='hidden'; dockPlayer(true);}
-function closeAlbum(){modal.hidden=true; const sr=document.getElementById('srmodal'); if(!sr||sr.hidden){document.body.style.overflow=''; dockPlayer(false);} const w=document.querySelector('#albmodal .win'); if(w)w.classList.remove('min','max');}
-function albStep(d){openAlbum(curAlb+d);}
+function openAlbum(i){
+  const sr=document.getElementById('srmodal');
+  playerToHome();
+  curAlb=(i+SLATE.length)%SLATE.length;
+  renderAlbum();
+  modal.hidden=false;
+  modal.classList.remove('minimized');
+  document.querySelector('#albmodal .win').classList.remove('min','max');
+  if(!sr||sr.hidden){
+    dockPlayer(false);
+    playerToAlbum();
+    if(curTrack<0)albPlay(0);
+  }
+}
+function closeAlbum(){
+  playerToHome();
+  modal.hidden=true;
+  const sr=document.getElementById('srmodal');
+  if(!sr||sr.hidden){document.body.style.overflow='';dockPlayer(false);}
+  const w=document.querySelector('#albmodal .win');
+  if(w)w.classList.remove('min','max');
+  modal.classList.remove('minimized');
+}
+function trackStep(d){
+  const a=SLATE[curAlb], tracks=ALBUM_TRACKS[a.c];
+  if(!tracks||!tracks.length)return;
+  const next=curTrack<0?(d>0?0:tracks.length-1):(curTrack+d+tracks.length)%tracks.length;
+  albPlay(next);
+}
+function albStep(d){trackStep(d);}
 document.getElementById('wclose').onclick=e=>{e.preventDefault();closeAlbum();};
-const winEl=document.querySelector('.win');
-document.getElementById('wmin').onclick=e=>{e.preventDefault();winEl.classList.remove('max');winEl.classList.toggle('min');};
-document.getElementById('wmax').onclick=e=>{e.preventDefault();winEl.classList.remove('min');winEl.classList.toggle('max');};
-document.querySelector('.wtbar').addEventListener('click',e=>{if(winEl.classList.contains('min')&&!e.target.closest('.wbtns'))winEl.classList.remove('min');});
-document.getElementById('aprev').onclick=()=>albStep(-1);
-document.getElementById('anext').onclick=()=>albStep(1);
+const winEl=document.querySelector('#albmodal .win');
+function restoreAlbumDrawer(){winEl.classList.remove('min');modal.classList.remove('minimized');}
+document.getElementById('wmin').onclick=e=>{e.preventDefault();const minimize=!winEl.classList.contains('min');winEl.classList.remove('max');winEl.classList.toggle('min',minimize);modal.classList.toggle('minimized',minimize);};
+document.getElementById('wmax').onclick=e=>{e.preventDefault();restoreAlbumDrawer();winEl.classList.toggle('max');};
+document.querySelector('#albmodal .wtbar').addEventListener('click',e=>{if(winEl.classList.contains('min')&&!e.target.closest('.wbtns'))restoreAlbumDrawer();});
+document.getElementById('aprev').onclick=()=>trackStep(-1);
+document.getElementById('anext').onclick=()=>trackStep(1);
 modal.addEventListener('click',e=>{if(e.target===modal)closeAlbum();});
-document.addEventListener('keydown',e=>{if(modal.hidden)return; if(e.key==='Escape')closeAlbum(); else if(e.key==='ArrowLeft')albStep(-1); else if(e.key==='ArrowRight')albStep(1);});
+document.addEventListener('keydown',e=>{if(modal.hidden)return; if(e.key==='Escape')closeAlbum(); else if(e.key==='ArrowLeft')trackStep(-1); else if(e.key==='ArrowRight')trackStep(1);});
 
 /* ---- SCREENING ROOM (placements) ---- */
 const PLACEMENTS=[
@@ -553,13 +493,13 @@ const srwin=srmodal.querySelector('.win'), srwtbar=srmodal.querySelector('.wtbar
 function renderSR(){
   srbody.innerHTML = `
     <div class="srhead">
-      <img class="srbanner" src="assets/banners/movies_filmstrip.gif" alt="MOVIES" width="466" height="205">
+      <div class="srh1">Screening Room</div>
       <div class="srh2">J&nbsp;A&nbsp;X&nbsp;X &middot; S&nbsp;L&nbsp;A&nbsp;D&nbsp;E &middot; P&nbsp;L&nbsp;A&nbsp;C&nbsp;E&nbsp;M&nbsp;E&nbsp;N&nbsp;T&nbsp;S</div>
     </div>
     <div class="srintro">&#127916; Music from JAXX SLADE PICTURES has been heard in the following theatrical features. Click &#9658; PLAY THE CUE to hear the actual track in our floating jukebox player while you watch.</div>
     ${PLACEMENTS.map((p,i)=>`
       <div class="srcard">
-        ${p.year>=2025?'<span class="srbadge-new blink">NEW!</span>':''}
+        ${p.year>=2025?'<span class="srbadge-new">Recent</span>':''}
         <div class="srbar"><span>FEATURE #${String(i+1).padStart(2,'0')} &mdash; ${esc(p.film)}</span><span class="srbar-r">${esc(p.studio)} &middot; ${p.year}</span></div>
         <div class="srbody">
           <h4>${esc(p.film)} <span class="yr">(${p.year})</span></h4>
@@ -580,7 +520,8 @@ function closeSR(){
   srmodal.hidden=true;
   /* stop any embedded trailer that was still playing */
   srbody.querySelectorAll('iframe').forEach(f=>{const s=f.src;f.src='about:blank';setTimeout(()=>{f.src=s;},0);});
-  if(modal.hidden){document.body.style.overflow=''; dockPlayer(false);}
+  if(modal.hidden){document.body.style.overflow='';dockPlayer(false);}
+  else{document.body.style.overflow='';dockPlayer(false);playerToAlbum();}
   srwin.classList.remove('min','max');
 }
 document.getElementById('srclose').onclick=e=>{e.preventDefault();closeSR();};
