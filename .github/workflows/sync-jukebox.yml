@@ -1,0 +1,94 @@
+name: Sync SourceAudio jukebox
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/15 * * * *"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: sourceaudio-jukebox
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Check SourceAudio configuration
+        id: sourceaudio
+        env:
+          SOURCEAUDIO_API_TOKEN: ${{ secrets.SOURCEAUDIO_API_TOKEN }}
+        run: |
+          if [ -n "$SOURCEAUDIO_API_TOKEN" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Add the SOURCEAUDIO_API_TOKEN repository secret to activate scheduled jukebox syncing."
+          fi
+
+      - name: Set up Node.js
+        if: steps.sourceaudio.outputs.configured == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Sync the published SourceAudio playlist
+        if: steps.sourceaudio.outputs.configured == 'true'
+        env:
+          SOURCEAUDIO_API_TOKEN: ${{ secrets.SOURCEAUDIO_API_TOKEN }}
+          SOURCEAUDIO_JUKEBOX_PLAYLIST_ID: ${{ vars.SOURCEAUDIO_JUKEBOX_PLAYLIST_ID }}
+          SOURCEAUDIO_JUKEBOX_PLAYLIST_NAME: ${{ vars.SOURCEAUDIO_JUKEBOX_PLAYLIST_NAME }}
+        run: node scripts/sync-jukebox.mjs
+
+      - name: Detect playlist changes
+        if: steps.sourceaudio.outputs.configured == 'true'
+        id: changes
+        run: |
+          if git diff --quiet -- jukebox_tracks.js; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit the updated jukebox
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- jukebox_tracks.js
+          git commit -m "Sync Jaxx Slade jukebox from SourceAudio"
+          git push origin main
+
+      - name: Configure GitHub Pages
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/configure-pages@v5
+
+      - name: Build the static site
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Upload the Pages artifact
+        if: steps.changes.outputs.changed == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_site
+
+      - name: Deploy the updated jukebox
+        if: steps.changes.outputs.changed == 'true'
+        id: deployment
+        uses: actions/deploy-pages@v4

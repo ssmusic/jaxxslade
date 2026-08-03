@@ -72,6 +72,7 @@ hr{border:0;border-top:1px solid var(--line);margin:0}
 .jbl li.playing{color:var(--accent);border-bottom-color:var(--accent)}
 .jbl .num{font:10px var(--mono);color:var(--muted);width:24px}
 .jbl .nm{cursor:pointer}
+.jbl .sa{margin-left:auto;color:var(--muted);font:9px var(--mono);letter-spacing:.04em;text-decoration:none;white-space:nowrap}
 .filters{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 22px;font:10px var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--muted)}
 .filters .btn{font:10px var(--mono);padding:7px 11px;text-transform:uppercase}
 .viewsw{margin-left:auto;white-space:nowrap}
@@ -212,14 +213,15 @@ body.playerdocked .modal{padding-bottom:165px}
 
   <!-- ===== JUKEBOX ===== -->
   <div class="box" id="jukebox">
-    <div class="boxhead">The Jaxx Slade jukebox <span class="small">Official SourceAudio player — plays here</span></div>
+    <div class="boxhead">The Jaxx Slade jukebox <span class="small" id="jukeboxnote">Official SourceAudio player — plays here</span></div>
     <div class="boxbody">
       <div id="playerhome">
         <div class="jukeframe">
           <div class="ptbar">JAXX&middot;SLADE&middot;PLAYER &mdash; <span id="npname">&hellip;</span> <span class="x"><a href="#" class="pwin" data-act="min" title="minimize">_</a><a href="#" class="pwin" data-act="max" title="restore">&#9633;</a><a href="#" class="pwin" data-act="close" title="close">&#10005;</a></span></div>
-          <iframe id="player" title="Jaxx Slade SourceAudio player" scrolling="no" frameborder="0" allow="autoplay"></iframe>
+          <iframe id="player" title="Jaxx Slade SourceAudio player" scrolling="no" frameborder="0" allow="autoplay" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"></iframe>
         </div>
       </div>
+      <p class="tries">Choose a title to load it here. SOURCEAUDIO &#8599; opens the full track search in a new tab, so this page stays open.</p>
       <ol id="jukelist" class="jbl"></ol>
     </div>
   </div>
@@ -271,6 +273,7 @@ body.playerdocked .modal{padding-bottom:165px}
 </div>
 
 <script src="album_tracks.js"></script>
+<script src="jukebox_tracks.js"></script>
 <script>
 const BASE="https://jaxxslade.sourceaudio.com/album/";
 const SEARCH="https://jaxxslade.sourceaudio.com/tracks?s=";
@@ -324,34 +327,22 @@ document.getElementById('grid').innerHTML = SLATE.map((a,i)=>`
 document.getElementById('textcat').innerHTML = '<ol>'+SLATE.map(a=>
   `<li data-f="${a.f.join(' ')}"><span class="c">${a.c} (${a.y})</span> &nbsp;<a href="${url(a)}" target="_blank" rel="noopener">${esc(a.t)}</a> &mdash; <i>${esc(a.log)}</i></li>`).join('')+'</ol>';
 
-/* jukebox — REAL embedded SourceAudio players (your hand-picked JXS Selects) */
-const JUKE=[
- {t:"Line Of Succession",c:"1548655137d851a6d5c3d916bf612369508f48"},
- {t:"Night Of The Long Knives",c:"15486676a3ac7c742c81fc8041e22c2bdfd75d"},
- {t:"Three Views Of A Secret",c:"1548679dccd578d9512164034a6aa89dae19b2"},
- {t:"Put Down Fire",c:"154868efc09ba68c4fbfed3d85a69bafe44164"},
- {t:"Red Ceasar",c:"1548695e7535a8f63083ea90c35b17af576dc6"},
- {t:"Fear Of Going Insane",c:"154870b5f27f3cf1809e377a7c7d6ecf26f3c2"},
- {t:"Bind Torture Kill",c:"154871dcbaf7c403bec5719c3122ad44516559"},
- {t:"Echoes of the Nebula",c:"154872cbbaa19d6cea3365c1a2205d5cc4871b"},
- {t:"Verba Nocturna",c:"154873876acd7d0d1ac2c8e3674855032578df"},
- {t:"When Stars Vanish",c:"1548749ce58b4c2f4666429d60abee3b71edcf"},
- {t:"The Last Armada",c:"154875c32f89349dcbbc3494b66ff836ae418d"},
- {t:"The Forgotten Colony",c:"1548761afded96091456b8ae54a3788e99eed6"},
- {t:"After the Ember",c:"154877e349c2b3644d162e891af937f117a944"},
- {t:"Dead By Morning",c:"1548780bbdd301500f54e35c58b72309156a21"},
-];
+/* jukebox — generated from the published SourceAudio playlist */
+const JUKE=Array.isArray(window.JUKEBOX_TRACKS)?window.JUKEBOX_TRACKS:[];
 const embedURL=(c,w)=>"https://jaxxslade.sourceaudio.com/embed.php?code="+c+"&art=1&backgroundColor=efede4&borderColor=c8c5ba&textColor=272825&width="+(w||640);
 function setPlayer(f,c){const p=f.parentElement;const w=Math.max(538,Math.round(((p&&p.clientWidth)||648)-8));f.style.width=w+'px';f.src=embedURL(c,w);}
 const player=document.getElementById('player'), npname=document.getElementById('npname'), jbl=document.getElementById('jukelist');
-jbl.innerHTML=JUKE.map((j,i)=>`<li data-i="${i}"><span class="num">${String(i+1).padStart(2,'0')}.</span><span class="nm" onclick="jukePlay(${i})">${esc(j.t)}</span></li>`).join('');
+const jukeboxnote=document.getElementById('jukeboxnote');
+jukeboxnote.textContent=JUKE.length+'-track SourceAudio playlist — edit the playlist there';
+jbl.innerHTML=JUKE.map((j,i)=>`<li data-i="${i}"><span class="num">${String(i+1).padStart(2,'0')}.</span><span class="nm" onclick="jukePlay(${i})">${esc(j.t)}</span><a class="sa" href="${SEARCH+encodeURIComponent(j.t)}" target="_blank" rel="noopener" title="Open ${esc(j.t)} on SourceAudio">SOURCEAUDIO &#8599;</a></li>`).join('');
 let curCue=null;
 function playCue(code,title){curCue=code; player.parentElement.classList.remove('min','closed'); setPlayer(player,code); npname.textContent=title||'…';}
 function dockPlayer(on){player.parentElement.classList.toggle('dock',on); document.body.classList.toggle('playerdocked',on);}
 function jukePlay(i){const j=JUKE[i]; if(!j)return; playCue(j.c,j.t); jbl.querySelectorAll('li').forEach(li=>li.classList.toggle('playing',+li.dataset.i===i));}
 document.querySelectorAll('.ptbar .pwin').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();const fr=player.parentElement,a=b.dataset.act;if(a==='min')fr.classList.add('min');else if(a==='max')fr.classList.remove('min','closed');else fr.classList.add('closed');}));
 document.querySelector('.ptbar').addEventListener('click',e=>{const fr=player.parentElement;if(fr.classList.contains('min')&&!e.target.closest('.pwin'))fr.classList.remove('min');});
-jukePlay(0);
+const defaultJukeIndex=JUKE.findIndex(j=>j.t.trim().toLowerCase()==='echoes of the nebula');
+if(JUKE.length)jukePlay(defaultJukeIndex>=0?defaultJukeIndex:0);
 
 /* filters */
 const FILTERS=[["all","All"],["action","Action"],["thriller","Thriller"],["horror","Horror"],["sci-fi","Sci-Fi"],["drama","Drama"],["heroic","Heroic"],["war","War"],["dark","Dark"]];

@@ -10,6 +10,8 @@ The public landing page for Jaxx Slade. **This is the link you hand to a supervi
 ```
 index.html               ← the whole site (HTML + CSS + JS inline)
 album_tracks.js          ← all 24 albums × every primary cue + its embed code (200 cues)
+jukebox_tracks.js        ← generated public playlist titles + embed codes (no secret)
+scripts/sync-jukebox.mjs ← syncs the published SourceAudio jukebox playlist
 mint_embed_codes.sh      ← regenerates album_tracks.js from the SourceAudio API
 covers/                  ← 24 album covers, JXS0NN_slug.png  (+ manifest.txt)
 assets/logo_wordart.png  ← the rainbow WordArt logo
@@ -24,7 +26,7 @@ Plain static files — drag the folder onto **Netlify Drop**, or use **Cloudflar
 ---
 
 ## Embedded audio — real music plays inline, two ways
-1. **The Jukebox** — 14 hand-picked "JXS Selects" cues (the `JUKE` array in `index.html`). Click → loads → press play.
+1. **The Jukebox** — generated from the published SourceAudio playlist `JXS Selects` (currently 14 tracks). Reorder, add, or remove tracks in SourceAudio; the sync workflow updates the site in the same order. “Echoes of the Nebula” loads by default. Track titles load the inline player, while SOURCEAUDIO ↗ opens the matching SourceAudio search in a new tab so the Jaxx Slade page stays open.
 2. **Every album poster** opens a **whole-album pop-up** — a mini-jukebox of that album's primary cues (all 200 cues live in `album_tracks.js`, keyed by album code). Browse ◄ PREV / NEXT ► through all 24, click any cue to load it, "license all NN cues" button to SourceAudio.
 
 How it works: SourceAudio's main pages block framing, but its official **per-track** embed widget (`embed.php?code=<hash>`) is frameable. Codes were minted in bulk via the API.
@@ -34,6 +36,19 @@ How it works: SourceAudio's main pages block framing, but its official **per-tra
 **Note — playback is click-to-load + tap-play.** The widget is SourceAudio's licensed, *watermarked* player; it has no autoplay and can't be auto-started from the page (cross-origin). That's intentional for a licensing site — you're not hosting free, full-quality master downloads.
 
 The **Find-a-Cue** search box and deep-links still hand off to the live catalogue for the full 2,643-cue library.
+
+### Keeping the jukebox in sync
+
+The GitHub Action in `.github/workflows/sync-jukebox.yml` runs every 15 minutes and can also be run manually. It looks up the published SourceAudio playlist by name, obtains official per-track embed codes, updates `jukebox_tracks.js`, commits the changed playlist, and deploys the refreshed static site.
+
+One-time setup:
+
+1. In SourceAudio, publish `JXS Selects` and manage its track order there.
+2. Create a SourceAudio API token that can read published playlists and obtain track embed codes.
+3. In the GitHub repository, add that token as an Actions repository secret named `SOURCEAUDIO_API_TOKEN`. Never put the token in this repo or in `jukebox_tracks.js`.
+4. Run **Sync SourceAudio jukebox** once from GitHub Actions. After that, scheduled runs keep it current.
+
+If the playlist is renamed, either rename it to `The Jaxx Slade Jukebox` or set the Actions variable `SOURCEAUDIO_JUKEBOX_PLAYLIST_NAME`. The optional variable `SOURCEAUDIO_JUKEBOX_PLAYLIST_ID` pins the sync to a playlist ID and survives future renames.
 
 ## Before it goes live — 2 things to fill in
 1. **Domain** — where it lives (then I make the share-card URLs absolute).
